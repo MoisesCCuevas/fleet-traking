@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component renders correctly with given props 1`] = `
+<button
+  class="px-4 py-1 shadow-md bg-slate-600 rounded-md text-white disabled:opacity-55 flex items-center justify-center gap-2 text-nowrap"
+  type="button"
+>
+  Click me
+</button>
+`;

@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --backgroundLight: #ffffff;
+  --foregroundLight: #171717;
+  --backgroundDark: #0a0a0a;
+  --foregroundDark: #ededed;
+}
+
+body {
+  color: var(--foregroundLight);
+  background: var(--backgroundLight);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark body {
+  color: var(--foregroundDark);
+  background: var(--backgroundDark);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark .nav-button {
+  color: var(--foregroundLight);
+  background: var(--backgroundLight);
+  border-radius: 50%;
+}
+
+.dark nav {
+  background-color: rgba(202 ,138, 4, 1);
+}
+
+nav {
+  background-color: rgba(202 ,138, 4, 0.75);
+}
+
+.dark thead {
+  background-color: rgba(202 ,138, 4, 1);
+}
+
+thead {
+  background-color: rgba(202 ,138, 4, 0.75);
+}
+
+.nav-button {
+  color: var(--foregroundDark);
+  background: var(--backgroundDark);
+  border-radius: 50%;
+}
+
+.dark .card {
+  background-color: rgba(55, 65, 81, 1);
+}
+
+.card {
+  background-color: rgba(55, 65, 81, 0.7);;
+}
+
+.error {
+  background-color: red;
+}
+
+.success {
+  background-color: green;
+}
+
+.info {
+  background-color: aqua;
+}
+
+.warning {
+  background-color: gold;
+}
+
+.notification-animation-open {
+  animation: slideUp 0.5s;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 3px;
+}
