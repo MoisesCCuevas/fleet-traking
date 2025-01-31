@@ -6,7 +6,6 @@ The Fleet Tracking System is a project designed to monitor and manage a fleet of
 ## Features
 - **Real-time Tracking**: Monitor the location of each vehicle in real-time.
 - **Route Optimization**: Calculate the most efficient routes for each vehicle.
-- **Maintenance Scheduling**: Keep track of maintenance schedules and receive alerts for upcoming services.
 - **Reporting**: Generate detailed reports on vehicle usage, fuel consumption, and more.
 
 ## Installation
