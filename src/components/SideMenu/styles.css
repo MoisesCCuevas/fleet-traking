@@ -1,0 +1,27 @@
+.open {
+  animation: openSideMenu 0.5s;
+  height: calc(100vh - 4rem);
+}
+
+@keyframes openSideMenu {
+  from {
+    transform:translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.closed {
+  animation: closeSideMenu 0.5s;
+  height: calc(100vh - 4rem);
+}
+
+@keyframes closeSideMenu {
+  from {
+    transform:translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

@@ -8,17 +8,17 @@
  * @returns {JSX.Element} The rendered Layout component.
  */
 import React from "react";
-import ThemeSwitcher from "@components/ThemeSwitcher";
 import Navbar from "@components/Navbar";
+import NavbarMini from "@components/NavbarMini";
 
 export default function Layout({ logout, children }){
   return (
-    <div className="flex items-center h-screen w-screen justify-center select-none">
-      <div className="absolute top-4 right-4 z-50">
-        <ThemeSwitcher />
-      </div>
+    <div className="flex flex-col md:flex-row items-center h-screen w-screen justify-center select-none">
       <Navbar logout={logout} />
-      {children}
+      <NavbarMini logout={logout} />
+      <React.Fragment>
+        {children}
+      </React.Fragment>
     </div>
   );
 }

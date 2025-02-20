@@ -17,7 +17,7 @@ export default function SmallCard(props) {
     percentage
   } = props
   return (
-    <div className="flex-1 px-2 py-1 justify-center w-16 text-white bg-gray-700 shadow-md rounded max-h-300px card">
+    <div className="flex-1 px-2 py-1 justify-center w-full md:w-16 text-white bg-gray-700 shadow-md rounded max-h-300px card">
       <div className="flex flex-col items-end pr-4">
         <p className="font-semibold">{title}</p>
         <p className="py-4 font-bold">{total}</p>

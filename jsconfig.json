@@ -4,7 +4,9 @@
       "@components/*": ["./src/components/*"],
       "@utils/*": ["./src/utils/*"],
       "@lib/*": ["./src/lib/*"],
-      "@app/*": ["./src/app/*"]
+      "@app/*": ["./src/app/*"],
+      "@providers/*": ["./src/providers/*"],
+      "@hooks/*": ["./src/hooks/*"]
     }
   }
 }

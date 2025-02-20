@@ -26,6 +26,7 @@ import {
   DocumentArrowDownIcon
 } from "@heroicons/react/24/outline"
 import Input from "@components/Input"
+import RoundedButton from "@components/RoundedButton"
 import SmallCard from "@components/SmallCard"
 import Button from "@components/Button"
 import Card from "@components/Card"
@@ -55,8 +56,8 @@ export default function Dashboard(){
 
   return (
     <Layout logout={logout}>
-      <main className="h-screen w-4/5 fixed top-0 right-0 p-8">
-        <div className="flex items-center gap-3 justify-self-start w-2/3">
+      <main className="h-screen w-full md:w-4/5 md:fixed md:top-0 md:right-0 p-8 mt-28 md:mt-0">
+        <div className="flex items-center gap-3 justify-self-start flex-wrap md:flex-nowrap w-full md:w-2/3">
           <Input placeholder="Buscar..." />
           <MagnifyingGlassIcon className="size-5" />
           <FunnelIcon className="size-5" />
@@ -65,22 +66,26 @@ export default function Dashboard(){
             <PlusIcon className="size-5" />
           </Button>
         </div>
-        <section className="flex items-center gap-3 justify-between mt-4">
+        <section className="flex flex-col md:flex-row items-center gap-3 justify-between mt-4">
           {totalReport.map(({ title, total, percentage }) => (
             <SmallCard key={title} title={title} total={total} percentage={percentage} />
           ))}
         </section>
-        <section className="flex my-4 gap-3">
+        <section className="flex flex-col md:flex-row my-4 gap-3">
           <Card>
             <BarCart data={barReport} />
-            <div className="absolute top-4 right-4 p-1 border-slate-200 border-2 rounded-md">
-              <DocumentArrowDownIcon className="size-5" />
+            <div className="absolute top-4 right-4">
+              <RoundedButton>
+                <DocumentArrowDownIcon className="size-5" />
+              </RoundedButton>
             </div>
           </Card>
           <Card>
             <AreaCart data={areaReport} />
-            <div className="absolute top-4 right-4 p-1 border-slate-200 border-2 rounded-md">
-              <DocumentArrowDownIcon className="size-5" />
+            <div className="absolute top-4 right-4">
+              <RoundedButton>
+                <DocumentArrowDownIcon className="size-5" />
+              </RoundedButton>
             </div>
           </Card>
         </section>

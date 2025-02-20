@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
-import ThemeProvider from "@components/ThemeProvider";
+import ThemeProvider from "../providers/ThemeProvider";
 import { useTheme } from 'next-themes';
 
 jest.mock('next-themes', () => ({

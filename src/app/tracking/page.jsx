@@ -62,7 +62,7 @@ export default function Tracking(){
 
   return (
     <Layout logout={logout}>
-        <main className="h-screen w-4/5 fixed top-0 right-0 p-8">
+        <main className="h-screen w-full md:w-4/5 md:fixed md:top-0 md:right-0 p-8 mt-28 md:mt-0">
           <figure className="w-full h-3/5">
             {apiKeyGoogle.key && (
               <MapProvider apiKey={apiKeyGoogle.key}>

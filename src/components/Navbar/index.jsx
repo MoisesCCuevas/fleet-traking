@@ -10,16 +10,20 @@
 "use client"
 import React from "react"
 import Link from "next/link"
+import RoundedButton from "@components/RoundedButton"
+import ThemeSwitcher from "@components/ThemeSwitcher"
 import { useFormStatus } from "react-dom"
-import { PowerIcon } from "@heroicons/react/24/outline"
+import { PowerIcon, Bars3Icon } from "@heroicons/react/24/outline"
 import { usePathname } from "next/navigation"
+import useUI from "@hooks/uiHook"
 
 export default function Navbar({ logout }){
   const status = useFormStatus()
   const pathname = usePathname()
+  const { open, openSideMenu, closeSideMenu } = useUI()
   return (
-    <nav className="fixed left-0 top-0 flex flex-col justify-between py-4 px-3 w-1/5 h-screen shadow-md">
-      <ul className="flex flex-col gap-3">
+    <nav className="fixed md:left-0 top-0 flex flex-col justify-between py-2 md:py-4 px-3 w-full md:w-1/5 h-fit md:h-screen shadow-md z-50">
+      <ul className="flex-col gap-3 hidden md:flex">
         <li>
           <h1 className="text-3xl font-semibold">Fleet Tracking</h1>
         </li>
@@ -30,16 +34,27 @@ export default function Navbar({ logout }){
           <Link href="/tracking">Monitor</Link>
         </li>
       </ul>
-      <form action={logout}>
-        <button
-          className="flex px-4 py-2 justify-center items-center gap-2 rounded-md bg-gray-600 w-full text-white disabled:opacity-40"
+      <div className="gap-3 items-center justify-end hidden md:flex">
+        <form action={logout}>
+          <RoundedButton
+            type="submit"
+            disabled={status.pending}
+          >
+            <PowerIcon className="size-5" />
+          </RoundedButton>
+        </form>
+        <ThemeSwitcher />
+      </div>
+      <div className="gap-3 items-center justify-between flex md:hidden">
+        <h1 className="text-3xl font-semibold">Fleet Tracking</h1>
+        <RoundedButton
           type="submit"
           disabled={status.pending}
+          onClick={() => open ? closeSideMenu() : openSideMenu()}
         >
-          <span>Logout</span>
-          <PowerIcon className="size-5" />
-        </button>
-      </form>
+          <Bars3Icon className="size-5" />
+        </RoundedButton>
+      </div>
     </nav>
   )
 }

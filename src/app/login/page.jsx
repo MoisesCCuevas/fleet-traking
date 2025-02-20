@@ -26,7 +26,7 @@ export default function LoginPage() {
   return (
     <main className="flex items-center h-screen w-screen justify-center select-none">
       <div className="flex flex-col items-center justify-between h-1/3">
-        <h1 className="text-6xl font-bold mb-7">Fleet Tracking</h1>
+        <h1 className="text-6xl font-bold mb-7 text-center">Fleet Tracking</h1>
         <form className="flex flex-col items-center gap-5 max-w-1/3" action={action}>
           <Input type="email" name="email" placeholder="Email" required />
           <Input type="password" name="password" placeholder="Password" required />

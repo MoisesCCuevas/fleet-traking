@@ -15,7 +15,7 @@ export default function Button(props) {
   const { type, onClick, children, disabled } = props
   return (
     <button
-      className="px-4 py-1 shadow-md bg-slate-600 rounded-md text-white disabled:opacity-55 flex items-center justify-center gap-2 text-nowrap"
+      className="px-4 py-2 shadow-md bg-gray-600 text-white hover:bg-gray-800 rounded-md disabled:opacity-55 flex items-center justify-center gap-2 text-nowrap w-fit"
       type={type}
       onClick={onClick}
       disabled={disabled}

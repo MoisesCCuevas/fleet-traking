@@ -29,24 +29,22 @@ body {
 
 .dark nav {
   background-color: rgba(202 ,138, 4, 1);
+  backdrop-filter: blur(10px);
 }
 
 nav {
   background-color: rgba(202 ,138, 4, 0.75);
+  backdrop-filter: blur(10px);
 }
 
 .dark thead {
   background-color: rgba(202 ,138, 4, 1);
+  backdrop-filter: blur(10px);
 }
 
 thead {
   background-color: rgba(202 ,138, 4, 0.75);
-}
-
-.nav-button {
-  color: var(--foregroundDark);
-  background: var(--backgroundDark);
-  border-radius: 50%;
+  backdrop-filter: blur(10px);
 }
 
 .dark .card {

@@ -10,7 +10,7 @@ import React from "react"
 
 export default function Card({ children }) {
   return (
-    <div className="w-1/2 h-[300px] bg-gray-700 rounded card p-4 relative">
+    <div className="w-full md:w-1/2 h-[300px] bg-gray-700 rounded card p-4 relative">
       {children}
     </div>
   )

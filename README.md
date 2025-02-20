@@ -24,15 +24,25 @@ To install the Fleet Tracking System, follow these steps:
     npm install --legacy-peer-deps
     ```
 4. Create and .env file:
-   ```sh
-   // secret key to encrypt your session. Generate a new one by running `openssl rand -base64 32`
+   ```
+   # Secret key to encrypt your session. Generate a new one by running `openssl rand -base64 32`
    SESSION_SECRET=
-   // hash login password (hex). Use https://hash.online-convert.com/es/generador-sha256
-   PASSWORD=
-   // login email
-   EMAIL=
-   // apiKey from Google Maps Services
+   # Public base URL
+   NEXT_PUBLIC_API_BASE_URL=
+   # apiKey from Google Maps Services
    GOOGLE_API_KEY=
+   ```
+5. Create a mockUsers.json file at getLogin path to used as valid users, using the following structure
+   ```
+   {
+     "users": [
+       {
+         "username": "test.user@mail.com",
+         //hash login password (hex). Use https://hash.online-convert.com/es/generador-sha256
+         "password": "5994471ABB01112AFCC18159F6CC74B4F511B99806DA59B3CAF5A9C173CACFC5"
+       }
+     ]
+   }
    ```
 
 

@@ -13,6 +13,7 @@
 "use client"
 import React from "react";
 import { useTheme } from 'next-themes';
+import RoundedButton from "@components/RoundedButton";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid"
 
 export default function ThemeSwitcher(){
@@ -21,15 +22,14 @@ export default function ThemeSwitcher(){
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
   return (
-    <button
+    <RoundedButton
       onClick={onChangeTheme}
-      className="size-7 nav-button p-1"
     >
       {theme === "dark" ? (
         <SunIcon data-testid="sun-icon" className="size-5 text-inherit" />
       ) : (
         <MoonIcon data-testid="moon-icon" className="size-5 text-inherit" />
       )}
-    </button>
+    </RoundedButton>
   );
 };
