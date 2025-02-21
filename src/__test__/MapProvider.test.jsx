@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import MapProvider from "@components/MapProvider";
+import MapProvider from "@providers/MapProvider";
 
 describe("MapProvider", () => {
   it("renders children when apiKey is provided", () => {

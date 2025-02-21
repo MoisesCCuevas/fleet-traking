@@ -42,4 +42,4 @@ mockUsers.json
 *.tsbuildinfo
 next-env.d.ts
 
-.docx
+.docx*

@@ -32,7 +32,7 @@
 import React, { useEffect, useState } from "react"
 import Layout from "@components/Layout"
 import { logout } from "./actions"
-import MapProvider from "@components/MapProvider"
+import MapProvider from "@providers/MapProvider"
 import MapComponent from "@components/Map"
 import { getGoogleAPI } from "./actions"
 import Table from "@components/Table"

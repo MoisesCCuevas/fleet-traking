@@ -8,10 +8,12 @@
  * @returns {JSX.Element} The rendered Swagger UI component.
  */
 "use client"
+import React from 'react';
 import SwaggerUI from 'swagger-ui-react';
 import 'swagger-ui-react/swagger-ui.css';
 
 function ReactSwagger({spec}) {
+  if (!spec) return null;
   return <SwaggerUI spec={spec} />;
 }
 
