@@ -11,8 +11,6 @@ const secretKey = process.env.SESSION_SECRET
 const encodedKey = new TextEncoder().encode(secretKey)
 const alg = "HS256"
 
-export const COOKIE_NAME = "__session__"
-
 /**
  * Encrypts a payload into a JWT token.
  * @param {Object} payload - The payload to be encrypted.
@@ -54,11 +52,11 @@ export async function createSession(userId) {
   const session = await encrypt({ userId }, "24h")
   const allCookies = await cookies()
 
-  allCookies.set(COOKIE_NAME, session, {
+  allCookies.set(process.env.NEXT_COOKIE_NAME, session, {
     httpOnly: true,
-    secure: true,
+    secure: false,
     expires: expiresAt,
-    sameSite: "lax",
+    sameSite: true,
     path: "/",
   })
 }
@@ -68,8 +66,9 @@ export async function createSession(userId) {
  * @returns {Promise<void>}
  */
 export async function deleteSession() {
+  console.log("Deleting session...")
   const allCookies = await cookies()
-  allCookies.delete(COOKIE_NAME)
+  allCookies.delete(process.env.NEXT_COOKIE_NAME)
 }
 
 /**

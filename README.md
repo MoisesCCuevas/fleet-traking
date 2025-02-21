@@ -31,6 +31,7 @@ To install the Fleet Tracking System, follow these steps:
    NEXT_PUBLIC_API_BASE_URL=
    # apiKey from Google Maps Services
    GOOGLE_API_KEY=
+   NEXT_COOKIE_NAME=__session__
    ```
 5. Create a mockUsers.json file at getLogin path to used as valid users, using the following structure
    ```

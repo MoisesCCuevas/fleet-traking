@@ -27,7 +27,7 @@
  */
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import { COOKIE_NAME, isSessionValid } from "@utils/auth";
+import { isSessionValid } from "@utils/auth";
 
 const protectedRoutes = ["/dashboard", "/tracking", "/", "/api-doc"];
 
@@ -35,7 +35,9 @@ export default async function middleware(req) {
   const path = req.nextUrl.pathname;
   const isProtectedRoute = protectedRoutes.includes(path);
 
-  const cookie = (await cookies()).get(COOKIE_NAME)?.value;
+  // Debugging logs
+  console.log("Available cookies:", await cookies());
+  const cookie = (await cookies()).get(process.env.NEXT_COOKIE_NAME)?.value;
   const validSession = await isSessionValid(cookie);
 
   if (isProtectedRoute && !validSession) {

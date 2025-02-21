@@ -25,21 +25,13 @@ import CostumeMark from '@components/MapCostumeMark'
 
 export default function MapComponent({ data, active, onClick }) {
   const { theme } = useTheme();
-  const [colorScheme, setColorScheme] = useState()
   const map = useMap();
-  const core = useMapsLibrary("core")
 
   useEffect(() => {
     if (map && active) {
       map.setCenter({ lat: active.lat, lng: active.lng })
     }
   }, [map, active]);
-
-  useEffect(() => {
-    if (map) {
-      setColorScheme(theme === "dark" ? core.ColorScheme.DARK : core.ColorScheme.LIGHT)
-    }
-  }, [map, theme]);
 
   if (data.length === 0) return null;
   return (
@@ -51,7 +43,7 @@ export default function MapComponent({ data, active, onClick }) {
         defaultZoom={12}
         gestureHandling={'greedy'}
         disableDefaultUI={true}
-        colorScheme={colorScheme}
+        colorScheme={theme.toUpperCase()}
       >
         {data.map((item, index) => (
           <CostumeMark key={index} data={item} onClick={onClick} />
